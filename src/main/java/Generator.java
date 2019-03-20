@@ -425,7 +425,7 @@ public class Generator {
               .append(SEP).append("        SELECT")
               .append(SEP).append("        <include refid=\"baseColumns\"/>")
               .append(SEP).append("        FROM ").append(table)
-              .append(SEP).append("        WHERE `").append(tables.get(table).getKey()).append("` = #{").append(col2Field(tables.get(table).getKey())).append(",jdbcType=").append(mapperings.get(tables.get(table).getValue()).jdbcType).append("}")
+              .append(SEP).append("        WHERE `").append(tables.get(table).getKey()).append("` = #{").append(col2Field(tables.get(table).getKey())).append(",jdbcType=").append(mapperings.get(tables.get(table).getValue()).jdbcType).append("} limit 1")
               .append(SEP).append("    </select>");
         }
         if(methods.contains(Method.UPDATE)) {
